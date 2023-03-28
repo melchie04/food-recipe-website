@@ -3,6 +3,6 @@ import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/food-recipe-website",
+  base: "/food-recipe-website/",
   plugins: [react()],
 });
