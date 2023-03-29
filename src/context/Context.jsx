@@ -1,12 +1,18 @@
-import React, { createContext, useContext, useReducer, useState } from "react";
-import { reducer } from "./Reducer";
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useReducer,
+  useState,
+} from "react";
 import { fetchMealCategories, fetchMealListByLetter } from "../utilities/Api";
+import { reducer } from "./Reducer";
 
 const MealContext = createContext();
 
 const initialState = {
-  mealCategories: await fetchMealCategories(),
-  mealList: await fetchMealListByLetter("A"),
+  mealCategories: [],
+  mealList: [],
   selectedLetter: "A",
   selectedCategory: "",
   searchName: "",
@@ -15,9 +21,20 @@ const initialState = {
 };
 
 const Context = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
   const [mealListLoading, setMealListLoading] = useState(false);
   const [mealLoading, setMealLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setMealListLoading(true);
+      initialState.mealCategories = await fetchMealCategories();
+      initialState.mealList = await fetchMealListByLetter("A");
+      setMealListLoading(false);
+    };
+    fetchData();
+  }, []);
+
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <MealContext.Provider

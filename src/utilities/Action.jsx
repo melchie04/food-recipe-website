@@ -7,89 +7,115 @@ import {
   fetchMealByRandom,
 } from "./Api";
 
-export const updateMealListByLetter = async (
+export const updateMealListByLetter = (
   dispatch,
   selectedLetter,
   setMealListLoading
 ) => {
   setMealListLoading(true);
-  const mealList = await fetchMealListByLetter(selectedLetter);
-  dispatch({
-    type: ACTIONS.SELECT_LETTER,
-    payload: {
-      mealList,
-      selectedLetter,
-      selectedCategory: "",
-      searchName: "",
-    },
-  });
-  setMealListLoading(false);
+  fetchMealListByLetter(selectedLetter)
+    .then((mealList) => {
+      dispatch({
+        type: ACTIONS.SELECT_LETTER,
+        payload: {
+          mealList,
+          selectedLetter,
+          selectedCategory: "",
+          searchName: "",
+        },
+      });
+      setMealListLoading(false);
+    })
+    .catch((error) => {
+      console.log(error);
+      setMealListLoading(false);
+    });
 };
 
-export const updateMealListByCategory = async (
+export const updateMealListByCategory = (
   dispatch,
   selectedCategory,
   setMealListLoading
 ) => {
   setMealListLoading(true);
-  const mealList = await fetchMealListByCategory(selectedCategory);
-  dispatch({
-    type: ACTIONS.SELECT_CATEGORY,
-    payload: {
-      mealList,
-      selectedLetter: "",
-      selectedCategory,
-      searchName: "",
-    },
-  });
-  setMealListLoading(false);
+  fetchMealListByCategory(selectedCategory)
+    .then((mealList) => {
+      dispatch({
+        type: ACTIONS.SELECT_CATEGORY,
+        payload: {
+          mealList,
+          selectedLetter: "",
+          selectedCategory,
+          searchName: "",
+        },
+      });
+      setMealListLoading(false);
+    })
+    .catch((error) => {
+      console.log(error);
+      setMealListLoading(false);
+    });
 };
 
-export const updateMealListBySearch = async (
+export const updateMealListBySearch = (
   dispatch,
   searchName,
   setMealListLoading
 ) => {
   setMealListLoading(true);
-  const mealList = await fetchMealListBySearch(searchName);
-  dispatch({
-    type: ACTIONS.SEARCH_NAME,
-    payload: {
-      mealList,
-      selectedLetter: "",
-      selectedCategory: "",
-      searchName,
-    },
-  });
-  setMealListLoading(false);
+  fetchMealListBySearch(searchName)
+    .then((mealList) => {
+      dispatch({
+        type: ACTIONS.SEARCH_NAME,
+        payload: {
+          mealList,
+          selectedLetter: "",
+          selectedCategory: "",
+          searchName,
+        },
+      });
+      setMealListLoading(false);
+    })
+    .catch((error) => {
+      console.log(error);
+      setMealListLoading(false);
+    });
 };
 
-export const updateMealById = async (dispatch, selectedId, setMealLoading) => {
+export const updateMealById = (dispatch, selectedId, setMealLoading) => {
   setMealLoading(true);
-  const meal = await fetchMealById(selectedId);
-  dispatch({
-    type: ACTIONS.CHOOSE_MEAL,
-    payload: {
-      meal,
-      selectedId,
-    },
-  });
-  setMealLoading(false);
+  fetchMealById(selectedId)
+    .then((meal) => {
+      dispatch({
+        type: ACTIONS.CHOOSE_MEAL,
+        payload: {
+          meal,
+          selectedId,
+        },
+      });
+      setMealLoading(false);
+    })
+    .catch((error) => {
+      console.log(error);
+      setMealLoading(false);
+    });
 };
 
-export const updateMealByRandom = async (
-  dispatch,
-  selectedId,
-  setMealLoading
-) => {
+export const updateMealByRandom = (dispatch, selectedId, setMealLoading) => {
   setMealLoading(true);
-  const meal = await fetchMealByRandom();
-  dispatch({
-    type: ACTIONS.CHOOSE_RANDOM,
-    payload: {
-      meal,
-      selectedId,
-    },
-  });
-  setMealLoading(false);
+  fetchMealByRandom()
+    .then((meal) => {
+      dispatch({
+        type: ACTIONS.CHOOSE_RANDOM,
+        payload: {
+          meal,
+          selectedId,
+        },
+      });
+      setMealLoading(false);
+    })
+    .catch((error) => {
+      console.log(error);
+      setMealLoading(false);
+    });
 };
