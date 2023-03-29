@@ -1,4 +1,4 @@
-export const generateRandomText = (length) => {
+export const generateRandom = (length) => {
   let result = "";
   const characters =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -7,4 +7,12 @@ export const generateRandomText = (length) => {
     result += characters.charAt(Math.floor(Math.random() * charactersLength));
   }
   return result + Date.now();
+};
+
+export const convertLetterToNumber = (letter) => {
+  if (letter !== "") {
+    return letter.toString().toLowerCase().charCodeAt(0) - 96;
+  } else {
+    return 0;
+  }
 };

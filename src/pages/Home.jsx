@@ -1,33 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { LinearProgress } from "@mui/material";
-import { useMealContext } from "../utilities/Context";
+import { useMealContext } from "../context/Context";
+import MealLoader from "../components/MealLoader";
 import Banner from "../components/Banner";
-import Controls from "../components/Controls";
+import Selection from "../components/Selection";
 import MealList from "../components/MealList";
 import Paging from "../components/Paging";
-
-const styles = {
-  linearProgress: {
-    backgroundColor: "rgba(239, 109, 36, 0.3)",
-    "& .MuiLinearProgress-bar": {
-      backgroundColor: "#ef6d24",
-    },
-  },
-};
+import { styles } from "../styles/HomeStyles";
 
 const Home = () => {
   const { mealListLoading } = useMealContext();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 5000);
+  }, []);
 
   return (
     <>
-      <Banner />
-      <Controls />
-      {mealListLoading ? (
-        <LinearProgress sx={styles.linearProgress} />
+      {isLoading ? (
+        <MealLoader />
       ) : (
-        <MealList />
+        <>
+          <Banner />
+          <Selection />
+          {mealListLoading ? (
+            <LinearProgress sx={styles.linearProgress} />
+          ) : (
+            <MealList />
+          )}
+          <Paging />
+        </>
       )}
-      <Paging />
     </>
   );
 };

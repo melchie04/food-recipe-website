@@ -1,20 +1,31 @@
 import React from "react";
+import { useMealContext } from "../context/Context";
 import MealControl from "../components/MealControl";
 import Meal from "../components/Meal";
 import MealLoader from "../components/MealLoader";
-import { useMealContext } from "../utilities/Context";
 import NotFound from "./NotFound";
 
 const Recipe = () => {
-  const { meal, mealLoading } = useMealContext();
+  const {
+    state: { meal },
+    mealLoading,
+  } = useMealContext();
 
   return (
     <>
-      <MealControl />
       {mealLoading ? (
         <MealLoader />
       ) : (
-        <>{!meal || meal.length === 0 ? <NotFound /> : <Meal />}</>
+        <>
+          {!meal || meal.length === 0 ? (
+            <NotFound />
+          ) : (
+            <>
+              <MealControl />
+              <Meal />
+            </>
+          )}
+        </>
       )}
     </>
   );

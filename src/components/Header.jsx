@@ -1,28 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Box, Button, Typography, Toolbar, AppBar } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { Link } from "react-router-dom";
 import eatwell from "../assets/eatwell.png";
-
-const styles = {
-  container: {
-    flexGrow: 1,
-  },
-  typography: {
-    fontWeight: "bold",
-    flexGrow: 1,
-    cursor: "pointer",
-    paddingLeft: 1,
-  },
-  button: {
-    color: "#ffffff",
-    fontWeight: "bold",
-  },
-  link: {
-    color: "#ffffff",
-    textDecoration: "none",
-  },
-};
+import { styles } from "../styles/HeaderStyles";
 
 const theme = createTheme({
   palette: {
@@ -44,7 +25,7 @@ const Header = () => {
                 E a t W e l l
               </Link>
             </Typography>
-            <Button sx={styles.button}>Login</Button>
+            {/* <Button sx={styles.button}>Login</Button> */}
           </Toolbar>
         </AppBar>
       </Box>

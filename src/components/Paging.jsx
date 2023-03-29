@@ -1,56 +1,22 @@
 import React from "react";
 import { Box, Pagination, PaginationItem } from "@mui/material";
-import { useMealContext } from "../utilities/Context";
-import { ACTIONS } from "../utilities/Actions";
+import { useMealContext } from "../context/Context";
+import { updateMealListByLetter } from "../utilities/Action";
+import { convertLetterToNumber } from "../utilities/Helpers";
+import { styles } from "../styles/PagingStyles";
 
 const alphabet = Array.from("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
-const styles = {
-  container: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    margin: "2rem 5rem",
-    "@media (max-width: 600px)": {
-      margin: "2rem 3rem",
-    },
-    "@media (max-width: 420px)": {
-      margin: "2rem 1rem",
-    },
-  },
-  pagination: {
-    "& .Mui-selected": {
-      backgroundColor: "#9f4818 !important",
-      "& .MuiPaginationItem-icon": {
-        backgroundColor: "#9f4818 !important",
-      },
-    },
-    "& .Mui-selected:hover": {
-      backgroundColor: "#9f4818 !important",
-    },
-    "& .MuiPaginationItem-root:hover": {
-      backgroundColor: "#9f4818 !important",
-    },
-  },
-  paginationItem: {
-    backgroundColor: "#ef6d24",
-    color: "#ffffff",
-  },
-};
 
 const Paging = () => {
-  const { selectedLetter, setSelectedLetter, setActions } = useMealContext();
+  const {
+    state: { selectedLetter },
+    dispatch,
+    setMealListLoading,
+  } = useMealContext();
 
   const handleLetterChange = (event, value) => {
-    setSelectedLetter(String.fromCharCode(65 + value - 1));
-    setActions(ACTIONS.SELECT_LETTER);
-  };
-
-  const convertLetterToNumber = (letter) => {
-    if (letter !== "") {
-      return letter.toString().toLowerCase().charCodeAt(0) - 96;
-    } else {
-      return 0;
-    }
+    const selectedLetter = String.fromCharCode(65 + value - 1);
+    updateMealListByLetter(dispatch, selectedLetter, setMealListLoading);
   };
 
   return (

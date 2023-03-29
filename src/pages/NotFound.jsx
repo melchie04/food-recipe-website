@@ -1,14 +1,5 @@
 import React from "react";
-
-const styles = {
-  container: {
-    display: "flex",
-    justifyContent: "center",
-    width: "100vw",
-    height: "70vh",
-    marginTop: "3rem",
-  },
-};
+import { styles } from "../styles/NotFoundStyles";
 
 const NotFound = () => {
   return (
