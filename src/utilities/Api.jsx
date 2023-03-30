@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const proxyServer = "https://cors-anywhere.herokuapp.com/";
+const proxyServer = "";
 const mealCategoriesUrl = () =>
   `${proxyServer}https://www.themealdb.com/api/json/v1/1/categories.php`;
 const mealListByLetterUrl = (selectedLetter) =>
@@ -14,44 +14,56 @@ const mealByIdUrl = (id) =>
 const mealByRandomUrl = () =>
   `${proxyServer}https://www.themealdb.com/api/json/v1/1/random.php`;
 
-export const fetchMealCategories = () => {
-  return axios
-    .get(mealCategoriesUrl())
-    .then((response) => response.data.categories)
-    .catch((err) => console.log(err));
+export const fetchMealCategories = async () => {
+  try {
+    const response = await axios.get(mealCategoriesUrl());
+    return response.data.categories;
+  } catch (err) {
+    return console.log(err);
+  }
 };
 
-export const fetchMealListByLetter = (selectedLetter) => {
-  return axios
-    .get(mealListByLetterUrl(selectedLetter))
-    .then((response) => response.data.meals)
-    .catch((err) => console.log(err));
+export const fetchMealListByLetter = async (selectedLetter) => {
+  try {
+    const response = await axios.get(mealListByLetterUrl(selectedLetter));
+    return response.data.meals;
+  } catch (err) {
+    return console.log(err);
+  }
 };
 
-export const fetchMealListByCategory = (selectedCategory) => {
-  return axios
-    .get(mealListByCategoryUrl(selectedCategory))
-    .then((response) => response.data.meals)
-    .catch((err) => console.log(err));
+export const fetchMealListByCategory = async (selectedCategory) => {
+  try {
+    const response = await axios.get(mealListByCategoryUrl(selectedCategory));
+    return response.data.meals;
+  } catch (err) {
+    return console.log(err);
+  }
 };
 
-export const fetchMealListBySearch = (searchName) => {
-  return axios
-    .get(mealListBySearchUrl(searchName))
-    .then((response) => response.data.meals)
-    .catch((err) => console.log(err));
+export const fetchMealListBySearch = async (searchName) => {
+  try {
+    const response = await axios.get(mealListBySearchUrl(searchName));
+    return response.data.meals;
+  } catch (err) {
+    return console.log(err);
+  }
 };
 
-export const fetchMealById = (selectedId) => {
-  return axios
-    .get(mealByIdUrl(selectedId))
-    .then((response) => response.data.meals)
-    .catch((err) => console.log(err));
+export const fetchMealById = async (selectedId) => {
+  try {
+    const response = await axios.get(mealByIdUrl(selectedId));
+    return response.data.meals;
+  } catch (err) {
+    return console.log(err);
+  }
 };
 
-export const fetchMealByRandom = () => {
-  return axios
-    .get(mealByRandomUrl())
-    .then((response) => response.data.meals)
-    .catch((err) => console.log(err));
+export const fetchMealByRandom = async () => {
+  try {
+    const response = await axios.get(mealByRandomUrl());
+    return response.data.meals;
+  } catch (err) {
+    return console.log(err);
+  }
 };
