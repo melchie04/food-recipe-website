@@ -68,6 +68,7 @@ const Banner = () => {
   return (
     <>
       <HeroSlider
+        style={{ backgroundColor: "black" }}
         height={"70vh"}
         autoplay
         controller={{
