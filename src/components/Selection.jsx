@@ -12,6 +12,7 @@ import { useMealContext } from "../context/Context";
 import {
   updateMealByRandom,
   updateMealListByCategory,
+  updateMealListByLetter,
 } from "../utilities/Action";
 import { generateRandom } from "../utilities/Helpers";
 import { styles } from "../styles/SelectionStyles";
@@ -26,7 +27,11 @@ const Selection = () => {
 
   const handleSelectChange = (event) => {
     const selectedCategory = event.target.value;
-    updateMealListByCategory(dispatch, selectedCategory, setMealListLoading);
+    if (selectedCategory === "") {
+      updateMealListByLetter(dispatch, "A", setMealListLoading);
+    } else {
+      updateMealListByCategory(dispatch, selectedCategory, setMealListLoading);
+    }
   };
 
   const handleClick = () => {
