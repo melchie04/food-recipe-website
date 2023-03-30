@@ -17,7 +17,7 @@ const Header = () => {
                 E a t W e l l
               </Link>
             </Typography>
-            <Button sx={styles.button}>Login</Button>
+            {/* <Button sx={styles.button}>Login</Button> */}
           </Toolbar>
         </AppBar>
       </Box>
