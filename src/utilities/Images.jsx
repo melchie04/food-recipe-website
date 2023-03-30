@@ -1,0 +1,17 @@
+export const imageList = [
+  "src/assets/images/img1.jpg",
+  "src/assets/images/img2.jpg",
+  "src/assets/images/img3.jpg",
+  "src/assets/images/img4.jpg",
+  "src/assets/images/img5.jpg",
+  "src/assets/images/img6.jpg",
+  "src/assets/images/img7.jpg",
+  "src/assets/images/img8.jpg",
+  "src/assets/images/img9.jpg",
+  "src/assets/images/img10.jpg",
+  "src/assets/images/img11.jpg",
+  "src/assets/images/img12.jpg",
+  "src/assets/images/img13.jpg",
+  "src/assets/images/img14.jpg",
+  "src/assets/images/img15.jpg",
+];

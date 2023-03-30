@@ -1,17 +1,13 @@
-import imageBanner from "../assets/image-banner.jpg";
-
 export const styles = {
   banner: {
-    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${imageBanner})`,
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-    backgroundColor: "#dfc38b",
-    height: "500px",
+    backgroundColor: "rgba(0,0,0,0.60)",
     display: "flex",
-    flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+    flexDirection: "column",
+    width: "100%",
+    height: "100%",
+    pointerEvents: "none",
     padding: "0 16px",
     textAlign: "center",
     color: "#ffffff",
