@@ -19,10 +19,9 @@ export const styles = {
     borderWidth: "2px",
     margin: "auto 5px",
     "&:hover": {
-      backgroundColor: "#ef6d24",
       borderColor: "#ef6d24",
       borderWidth: "2px",
-      color: "#ffffff",
+      transform: "scale(1.1)",
     },
   },
   link: {

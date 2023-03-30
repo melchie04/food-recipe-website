@@ -1,17 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Box, Button, Typography, Toolbar, AppBar } from "@mui/material";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import eatwell from "../assets/eatwell.png";
-import { styles } from "../styles/HeaderStyles";
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#ef6d24",
-    },
-  },
-});
+import { theme, styles } from "../styles/HeaderStyles";
 
 const Header = () => {
   return (
@@ -25,7 +17,7 @@ const Header = () => {
                 E a t W e l l
               </Link>
             </Typography>
-            {/* <Button sx={styles.button}>Login</Button> */}
+            <Button sx={styles.button}>Login</Button>
           </Toolbar>
         </AppBar>
       </Box>

@@ -28,9 +28,18 @@ export const styles = {
     fontWeight: "bold",
     color: "#ef6d24",
     borderWidth: "2px",
+    "& .MuiSelect-icon": {
+      color: "#ef6d24",
+    },
     "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
       borderWidth: "2px",
       borderColor: "#ef6d24",
+    },
+    "&:hover": {
+      transform: "scale(1.1)",
+    },
+    "& .MuiSelect-icon:hover ~ .MuiSelect-select": {
+      transform: "scale(1.1)",
     },
   },
   label: {
@@ -55,10 +64,9 @@ export const styles = {
     borderColor: "#ef6d24",
     borderWidth: "2px",
     "&:hover": {
-      backgroundColor: "#ef6d24",
       borderColor: "#ef6d24",
       borderWidth: "2px",
-      color: "#ffffff",
+      transform: "scale(1.1)",
     },
   },
   link: {
