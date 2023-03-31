@@ -37,7 +37,7 @@ export const styles = {
     marginBottom: 3,
   },
   span: {
-    color: "#ef6d24",
+    color: "#fd7a02",
   },
   paragraph: {
     fontSize: 24,
