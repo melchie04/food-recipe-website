@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Box, Button, Typography, Toolbar, AppBar } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
-import eatwell from "../assets/eatwell.png";
+import eatwell from "../assets/logo/eatwell.png";
 import { theme, styles } from "../styles/HeaderStyles";
 
 const Header = () => {

@@ -1,5 +1,5 @@
 import React from "react";
-import theMealDb from "../assets/the-meal-db.png";
+import theMealDb from "../assets/logo/the-meal-db.png";
 import { styles } from "../styles/FooterStyles";
 
 const Footer = () => {

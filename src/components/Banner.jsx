@@ -74,7 +74,9 @@ const Banner = () => {
         controller={{
           initialSlide: 1,
           slidingDuration: 500,
-          slidingDelay: 100,
+          slidingDelay: 20,
+          direction: "horizontal",
+          isRewind: true,
           onSliding: (nextSlide) =>
             console.debug("onSliding(nextSlide): ", nextSlide),
           onBeforeSliding: (previousSlide, nextSlide) =>

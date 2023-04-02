@@ -1,6 +1,6 @@
 import React from "react";
 import { Box } from "@mui/material";
-import eatwell from "../assets/loader.gif";
+import eatwell from "../assets/logo/loader.gif";
 import { styles } from "../styles/MealLoaderStyles";
 
 const MealLoader = () => {
