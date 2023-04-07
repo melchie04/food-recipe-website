@@ -4,7 +4,7 @@
 <p align="left">
   This is a food recipe website that helps users find a variety of delicious meals and learn how to create them. Each recipe includes a list of ingredients, step-by-step instructions, and videos to help the user make the dish they want.
 </p>
-<p align="left">🌱 The purpose of this project is to help me learn how to use Vite with the ReactJS framework and expand my knowledge of how to integrate with APIs. In this website, I learn how to use createContext and useReducer in React. I also used Material UI 5 instead of Bootstrap 5. I made the decision to build a website that will interface with a recipe API because I love delicious food but don't know how to cook. This website uses TheMealDB API and is my second React and API-integrated project.</p>
+<p align="left">🌱 The purpose of this project is to help me learn how to use Vite with the ReactJS framework and expand my knowledge of how to integrate with APIs. I also learned how to use Material UI 5. This website uses TheMealDB API and is my second React and API-integrated project.</p>
 
 <h3 align="left">Here are some languages and tools that I used:</h3>
 <p align="left">
